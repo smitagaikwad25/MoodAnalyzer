@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.birdgelabz.MoodAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-06T12:23:52" hostname="admin" time="0.004">
+  <properties/>
+  <testcase name="givenMessage_WhenSad_Shoud_ReturnSad" classname="com.birdgelabz.MoodAnalyzerTest" time="0.004"/>
+  <system-out><![CDATA[MoodSad
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
