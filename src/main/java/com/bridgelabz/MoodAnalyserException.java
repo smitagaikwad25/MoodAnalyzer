@@ -13,4 +13,5 @@ public class MoodAnalyzerException extends Exception {
         ENTERED_NULL
     }
 
+
 }
