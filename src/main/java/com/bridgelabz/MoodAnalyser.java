@@ -6,6 +6,7 @@ public class MoodAnalyser {
     public MoodAnalyser() {
 
     }
+
     public MoodAnalyser(String message) {
         this.message = message;
     }
@@ -25,8 +26,8 @@ public class MoodAnalyser {
         }
     }
 
-    public boolean equals(Object obj){
-        if ( obj instanceof MoodAnalyser)
+    public boolean equals(Object obj) {
+        if (obj instanceof MoodAnalyser)
             return true;
         return false;
     }
