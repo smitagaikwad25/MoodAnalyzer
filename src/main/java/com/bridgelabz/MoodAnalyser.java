@@ -1,25 +1,28 @@
 package com.bridgelabz;
 
-public class MoodAnalyzer {
+public class MoodAnalyser {
     String message;
 
-    public MoodAnalyzer() {
+    public MoodAnalyser() {
 
     }
 
-    public MoodAnalyzer(String message) {
+    public MoodAnalyser(String message) {
         this.message = message;
     }
 
-    public String analyseMood() throws MoodAnalyzerException {
+    public String analyseMood() throws MoodAnalyserException {
         try {
-            if (message.contains("Sad")) {
+            if (message.length() == 0)
+                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_EMPTY,
+                        "please enter proper Mood");
+            if (message.contains("Sad"))
                 return "Sad";
-            } else
+            else
                 return "Happy";
         } catch (NullPointerException e) {
-            throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_NULL,
-                                                "please enter proper Mood");
+            throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL,
+                    "please enter proper Mood");
         }
     }
 }
