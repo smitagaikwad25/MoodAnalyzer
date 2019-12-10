@@ -74,4 +74,10 @@ public class MoodAnalyserTest {
         }
 
     }
+
+    @Test
+    public void givenMoodAnalyserClassParam_whenProper_ShouldReturnObject() throws MoodAnalyserException {
+            MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyser();
+            Assert.assertEquals(new MoodAnalyser("I am in happy mood"), moodAnalyser);
+        }
 }
