@@ -1,12 +1,11 @@
 package com.bridgelabz;
 
 public class MoodAnalyser {
-    String message;
+    private String message;
 
     public MoodAnalyser() {
 
     }
-
     public MoodAnalyser(String message) {
         this.message = message;
     }
@@ -25,4 +24,11 @@ public class MoodAnalyser {
                     "please enter proper Mood");
         }
     }
+
+    public boolean equals(Object obj){
+        if ( obj instanceof MoodAnalyser)
+            return true;
+        return false;
+    }
+
 }
