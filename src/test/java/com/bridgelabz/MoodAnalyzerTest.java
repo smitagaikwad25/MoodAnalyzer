@@ -7,16 +7,16 @@ public class MoodAnalyzerTest {
     @Test
     public void givenMessage_WhenSad_Shoud_ReturnSad()
     {
-        MoodAnalyzer analyzer = new MoodAnalyzer();
-        String mood = analyzer.analyseMood("this Sad is message");
+        MoodAnalyzer analyzer = new MoodAnalyzer("this Sad is message");
+        String mood = analyzer.analyseMood();
         Assert.assertEquals("Sad",mood);
     }
 
     @Test
     public void givenMessage_WhenAny_ShoudReturnHappy()
     {
-        MoodAnalyzer analyzer = new MoodAnalyzer();
-        String mood = analyzer.analyseMood("I am in any mood");
+        MoodAnalyzer analyzer = new MoodAnalyzer("I am in any mood");
+        String mood = analyzer.analyseMood();
         Assert.assertEquals("Happy",mood);
 
     }
