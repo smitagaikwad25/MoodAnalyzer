@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class MoodAnalyserTest {
 
-
     @Test
     public void givenMessage_WhenSad_Should_ReturnSad() throws MoodAnalyserException {
         MoodAnalyser analyzer = new MoodAnalyser("this Sad is message");
@@ -87,7 +86,19 @@ public class MoodAnalyserTest {
             MoodAnalyser moodAnalyser = new MoodAnalyser();
             MoodAnalyserFactory.createMoodAnalyser("I am in happy mood");
         } catch (MoodAnalyserException e) {
-            Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_CLASS,e.type);
+            Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_CLASS, e.type);
         }
+    }
+
+    @Test
+    public void givenMoodAnalyserClassParam_improperConstructor_ReturnMoodAnalyserException() {
+
+        try {
+            MoodAnalyser moodAnalyser = new MoodAnalyser();
+            MoodAnalyserFactory.createMoodAnalyser("I am in happy mood");
+        } catch (MoodAnalyserException e) {
+            Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_METHOD, e.type);
+        }
+
     }
 }
