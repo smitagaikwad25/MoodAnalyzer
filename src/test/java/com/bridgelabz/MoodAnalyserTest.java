@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
-import org.junit.Assert;
-import org.junit.Test;
+        import org.junit.Assert;
+        import org.junit.Test;
 
 public class MoodAnalyserTest {
 
@@ -108,6 +108,16 @@ public class MoodAnalyserTest {
             Assert.assertEquals("Happy",mood);
         } catch (MoodAnalyserException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenHappyMessage_ImproperMethodName_ReturnMoodAnalyseException() {
+        try {
+            MoodAnalyser ReflectObject = MoodAnalyserReflector.createMoodAnalyser("I am in Happy Mood");
+            Object mood = MoodAnalyserReflector.invokeMethod(ReflectObject, "analyseMood123");
+        } catch (MoodAnalyserException e) {
+            Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_METHOD, e.type);
         }
     }
 }
