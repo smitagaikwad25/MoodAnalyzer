@@ -148,4 +148,15 @@ public class MoodAnalyserTest {
         }
     }
 
+    @Test
+    public void givenNullMessage_withReflector_ShouldThrowException() {
+        try {
+            Constructor<?> constructor = MoodAnalyserReflector.getConstructor();
+            MoodAnalyser mood = MoodAnalyserReflector.createMoodAnalyser(constructor);
+            MoodAnalyserReflector.setField(mood,"message",null);
+        } catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
