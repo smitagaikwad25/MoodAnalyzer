@@ -1,13 +1,13 @@
 package com.bridgelabz;
 
-public class MoodAnalyser {
+public class object {
     private String message;
 
-    public MoodAnalyser() {
+    public object() {
 
     }
 
-    public MoodAnalyser(String message) {
+    public object(String message) {
         this.message = message;
     }
 
@@ -27,7 +27,7 @@ public class MoodAnalyser {
     }
 
     public boolean equals(Object obj) {
-        if (obj instanceof MoodAnalyser)
+        if (obj instanceof object)
             return true;
         return false;
     }
