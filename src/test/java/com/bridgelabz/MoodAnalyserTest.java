@@ -64,7 +64,6 @@ public class MoodAnalyserTest {
         } catch (MoodAnalyserException e) {
             Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_CLASS, e.type);
         }
-
     }
 
     @Test
@@ -129,7 +128,6 @@ public class MoodAnalyserTest {
 
     @Test
     public void givenHappyMessage_withReflector_ShouldReturnHappy() {
-
         try {
             Constructor<?> constructor = MoodAnalyserReflector.getConstructor();
             MoodAnalyser mood = MoodAnalyserReflector.createMoodAnalyser(constructor);
@@ -137,6 +135,17 @@ public class MoodAnalyserTest {
         } catch (MoodAnalyserException e) {
             e.printStackTrace();
         }
-
     }
+
+    @Test
+    public void givenField_whenImproper_ShouldThrowException() {
+        try {
+            Constructor<?> constructor = MoodAnalyserReflector.getConstructor();
+            MoodAnalyser mood = MoodAnalyserReflector.createMoodAnalyser(constructor);
+            MoodAnalyserReflector.setField(mood,"improperMessage","I am in Happy mood");
+        } catch (MoodAnalyserException e) {
+           Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_FIELD,e.type);
+        }
+    }
+
 }
