@@ -60,7 +60,6 @@ public class MoodAnalyserReflector {
         }
     }
 
-
     public static Constructor<?> getConstructor(Class<?>... param) throws MoodAnalyserException {
         try {
             Class<?> moodAnalyserClass = Class.forName("com.bridgelabz.MoodAnalyser");
@@ -72,20 +71,19 @@ public class MoodAnalyserReflector {
         }
     }
 
-    public static void setField(MoodAnalyser moodAnalyser,String fieldName,String fieldValue) throws MoodAnalyserException {
+    public static void setField(MoodAnalyser moodAnalyser, String fieldName, String fieldValue) throws MoodAnalyserException {
         try {
             Field field = moodAnalyser.getClass().getDeclaredField(fieldName);
             field.setAccessible(true);
-            field.set(moodAnalyser,fieldValue);
+            field.set(moodAnalyser, fieldValue);
         } catch (NoSuchFieldException e) {
             throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NO_SUCH_FIELD,
                     "Define proper Field Name");
-        }catch (IllegalAccessException e) {
-            throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.No_ACCESS,e.getMessage());
-        }catch (NullPointerException e){
-            throw new  MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL,"please Enter Proper Field");
+        } catch (IllegalAccessException e) {
+            throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.No_ACCESS, e.getMessage());
+        } catch (NullPointerException e) {
+            throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL, "please Enter Proper Field");
         }
     }
-
 
 }
